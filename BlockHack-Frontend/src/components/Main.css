@@ -1,0 +1,43 @@
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-top: 60px; /* Adjust based on navbar's height */
+  padding-bottom: 60px; /* Adjust based on footer's height */
+  overflow-y: auto;
+}
+
+.main-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+  border: 1px solid #aaa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.analysis-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.analysis-section h3 {
+  color: #444;
+}
+
+.analysis-section p {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
