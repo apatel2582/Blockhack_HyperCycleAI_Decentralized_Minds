@@ -1,0 +1,32 @@
+{
+    "solidityVersion": "0.8.0",
+    "contractType": "Custom",
+    "stateVariables": [
+        {
+            "visibility": "public",
+            "declaration": "TokenB token"
+        },
+        {
+            "visibility": "public",
+            "declaration": "address counterpartBridge"
+        }
+    ],
+    "functions": [
+        "setCounterpartBridge",
+        "releaseTokens"
+    ],
+    "events": [
+        "TokensReleased"
+    ],
+    "modifiers": [],
+    "imports": [
+        "./TokenB.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+    ],
+    "tokenHandling": [],
+    "contractInteractions": [
+        "mint"
+    ],
+    "hardcodedAddresses": [],
+    "contractCode": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.0;\r\n\r\nimport \"./TokenB.sol\";\r\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\r\n\r\ncontract BridgeB is Ownable {\r\n    TokenB public token;\r\n    address public counterpartBridge;\r\n\r\n    event TokensReleased(address indexed to, uint256 amount);\r\n\r\n    constructor(address _token) {\r\n        token = TokenB(_token);\r\n    }\r\n\r\n    function setCounterpartBridge(address _counterpartBridge) external onlyOwner {\r\n        counterpartBridge = _counterpartBridge;\r\n    }\r\n\r\n    function releaseTokens(address to, uint256 amount) external {\r\n        // require(msg.sender == counterpartBridge, \"Only counterpart bridge can release tokens\");\r\n        token.mint(to, amount); // Call the mint function of TokenB\r\n        emit TokensReleased(to, amount);\r\n    }\r\n}\r\n\r\n\r\n// is it possible to do calculations locally, not on EVM?\r\n// Offchain data processing\r\n// Offchain looping\r\n// < and <= , use < \r\n// uint256 is better than uint8\r\n// Batch processing \r\n// Use IPFS for storing data \r\n// Use libraries like SafeMath and OpenZeppelin \r\n// Short circuiting  \r\n// ABI encoder V2 \r\n// use unchecked for arithmetic operations \r\n// use calldata instead of memory for function parameters, if you don't need to modify them in the function body \r\n// use immutable instead of constant. Why? \r\n// remove unnecessary code\r\n// use preompiled contracts \r\n// use in-line assembly code \r\n// Understand L2 solutions\r\n// Use optimizer tools. Ex: solc, truffle build, remix, hardhat, etc.\r\n// Use latest version of Solidity\r\n// Lock pragma to a specific version\r\n// Use the same solidity version for all contracts\r\n\r\n\r\n\r\n// Design Patterns\r\n// Logic contracts and data contracts(Storage contracts)\r\n// Proxy contracts - Proxy pattern\r\n// Satellite pattern - \r\n// Diamond pattern - \r\n"
+}

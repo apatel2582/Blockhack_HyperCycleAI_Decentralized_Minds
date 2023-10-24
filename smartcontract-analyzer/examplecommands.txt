@@ -1,0 +1,42 @@
+Upload:
+Endpoint: /files/upload
+curl -X POST -F "file=@path_to_your_file.sol" http://localhost:3000/files/upload
+
+Extract:
+Endpoint: /files/extract
+sample request:
+curl -X POST -H "Content-Type: application/json" -d "{\"filePath\": \"C:\\Users\\anish\\Downloads\\GBC_Blockchain_Development\\Blockhack\\smartcontract-analyzer\\uploads\\1698160952435-BridgeB.sol\"}" http://localhost:3000/files/extract
+
+General Summary (after extracting data):
+Endpoint: /analysis/general
+curl -X POST http://localhost:3000/analysis/general -H "Content-Type: application/json"
+
+Specialized Analysis:
+Solidity Version:
+curl -X POST http://localhost:3000/analysis/solidity-version -H "Content-Type: application/json"
+
+Contract Type:
+curl -X POST http://localhost:3000/analysis/contract-type -H "Content-Type: application/json"
+
+Contract Details:
+curl -X POST http://localhost:3000/analysis/contract-details -H "Content-Type: application/json"
+
+Function Details:
+curl -X POST http://localhost:3000/analysis/function-details -H "Content-Type: application/json"
+
+Token Handling:
+curl -X POST http://localhost:3000/analysis/token-handling -H "Content-Type: application/json"
+
+Interactions:
+curl -X POST http://localhost:3000/analysis/interactions -H "Content-Type: application/json"
+
+Vulnerabilities:
+curl -X POST http://localhost:3000/analysis/vulnerabilities -H "Content-Type: application/json"
+
+Gas Efficiency:
+curl -X POST http://localhost:3000/analysis/gas-efficiency -H "Content-Type: application/json"
+
+Hardcoded Addresses:
+curl -X POST http://localhost:3000/analysis/hardcoded-addresses -H "Content-Type: application/json"
+
+You can replace localhost:3000 with your actual server address and port if different. For the file upload, replace path_to_your_file.sol with the actual path to your Solidity file.
