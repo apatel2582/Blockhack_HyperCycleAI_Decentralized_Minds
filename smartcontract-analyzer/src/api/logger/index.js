@@ -12,5 +12,4 @@ if (process.env.NODE_ENV == 'dev') {
     // production mode
     logger = buildProdLogger();
 }
-
-export default logger;
+module.exports = logger;

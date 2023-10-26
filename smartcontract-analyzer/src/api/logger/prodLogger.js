@@ -16,4 +16,4 @@ const buildProdLogger = () => {
     });
 };
 
-export default buildProdLogger;
+module.exports = buildProdLogger;

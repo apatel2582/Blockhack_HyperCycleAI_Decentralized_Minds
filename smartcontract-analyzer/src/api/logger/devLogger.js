@@ -18,4 +18,4 @@ const buildDevLogger = () => {
     });
 };
 
-export default buildDevLogger;
+module.exports = buildDevLogger;
