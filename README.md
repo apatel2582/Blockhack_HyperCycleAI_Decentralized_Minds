@@ -21,7 +21,7 @@ A platform that leverages GPT AI API for auditing smart contracts.
    - A code editor of your choice.
 
 2. **Install Dependencies**:
-   - Navigate to both the frontend (`BlockHack-Frontend`) and backend (`smartcontract-analyzer`) folders separately and run the following:
+   - Navigate to both the frontend (`frontend/frontend`) and backend (`smartcontract-analyzer`) folders separately and run the following:
      ```bash
      npm install
      ```
@@ -40,7 +40,7 @@ Since Dockerization is currently facing issues, the recommendation is to run the
    - The backend should start at `localhost:3000`.
 
 2. **Frontend**:
-   - Navigate to the `BlockHack-Frontend` folder.
+   - Navigate to the `frontend/frontend` folder.
    - Run the command:
      ```bash
      npm start
