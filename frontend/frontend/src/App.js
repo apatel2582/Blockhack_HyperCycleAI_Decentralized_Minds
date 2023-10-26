@@ -87,7 +87,10 @@ function App() {
 
   return (
     <div className="App container mt-5">
-      <h1 className="mb-4">AI audited Smart Contracts</h1>
+      <div className="blue-container">
+        <h1 className="white-text">ChatGBC</h1>
+      </div>
+      <h1 className="mb-4 center-text">AI Audited Smart Contracts</h1>
       <FileUpload
         onFileUploaded={setUploadedFile}
         onFileUploadSuccess={extractDetailsAutomatically}

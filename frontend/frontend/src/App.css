@@ -4,6 +4,20 @@
   margin: 0 auto;
 }
 
+.blue-container {
+  text-align: center;
+  background-color: #0056b3;
+  padding: 10px; /* Add padding for spacing */
+}
+
+.white-text {
+  color: white;
+}
+
+.center-text {
+  text-align: center;
+}
+
 .file-upload {
   text-align: center;
   padding: 20px;
