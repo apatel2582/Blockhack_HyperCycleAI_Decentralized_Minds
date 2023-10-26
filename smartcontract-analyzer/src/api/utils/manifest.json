@@ -1,0 +1,32 @@
+{
+    "name": "Smart Contract Analyzer",
+    "short_name": "contract_analyzer",
+    "version": "0.1.0",
+    "license": "Open",
+    "terms_of_service": "Sorry, its in the works!",
+    "author": "Decentralized Minds - GBC",
+    "endpoints": [
+      {
+        "uri": "/analyze-contract",
+        "input_query": "",
+        "input_headers": {},
+        "input_body": { "sol_file": "<Solidity_File>" },
+        "output": "<JSON_Analysis>",
+        "documentation":
+          "Analyzes a provided Solidity smart contract and returns a detailed JSON analysis.",
+        "currency": "USD",
+        "price_per_call": { "estimated_cost": 0, "min": 0, "max": 0.1 },
+        "price_per_mb": { "estimated_cost": 0, "min": 0, "max": 0.1 },
+        "example_calls": [
+          {
+            "body": "",
+            "method": "POST",
+            "query": "",
+            "headers": "",
+            "output": { "text": "Your Manifest JSON File!" }
+          }
+        ]
+      }
+    ],
+    "documentation_url": ";) Sorry!"
+}

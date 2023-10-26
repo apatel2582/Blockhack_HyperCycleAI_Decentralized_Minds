@@ -6,8 +6,15 @@ const fs = require("fs");
 const cors = require("cors");
 require("dotenv").config();
 
+import invalidRoute from './src/api/routes/invalid.route'
+
 const app = express();
 app.use(cors());
+// req input phraser
+app.use(express.json());
+
+// invalid route handler
+app.use(invalidRoute);
 
 const TOKEN_COST_USD = 0.003;
 
