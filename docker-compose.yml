@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=docker
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - PORT=3000
     volumes:
@@ -17,16 +17,17 @@ services:
 
   frontend:
     build:
-      context: ./BlockHack-Frontend
+      context: ./frontend/frontend
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "3001:3001"
     environment:
       - NODE_ENV=production
+      - REACT_APP_BACKEND_URL=http://backend:3000
     depends_on:
       - backend
     volumes:
-      - ./BlockHack-Frontend:/usr/src/app
+      - ./frontend/frontend:/usr/src/app
       - frontend-modules:/usr/src/app/node_modules
 
 volumes:

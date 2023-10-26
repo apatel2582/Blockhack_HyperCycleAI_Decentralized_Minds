@@ -1,0 +1,59 @@
+.analysis-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.analysis-section2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.analysis-section h3 {
+  margin-bottom: 20px;
+}
+
+button.btn-analysis {
+  padding: 10px 20px;
+  background-color: #007bff; /* Bootstrap's primary color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+button.btn-analysis:hover {
+  background-color: #0056b3; /* Darkened version of Bootstrap's primary color */
+}
+
+.analysis-content {
+  width: 100%;
+  text-wrap: balance;
+  max-width: 800px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.formatted-text3 {
+  font-family: Arial, sans-serif; /* Use any preferred font-family */
+  font-size: 16px; /* Adjust the font size as needed */
+  line-height: 1.5; /* Adjust the line height for better readability */
+  white-space: pre-wrap; /* Preserves newlines and whitespace */
+  text-align: justify; /* Justifies the text to both the left and right margins */
+  margin: 20px 0; /* Adds some margin to the top and bottom for spacing */
+}

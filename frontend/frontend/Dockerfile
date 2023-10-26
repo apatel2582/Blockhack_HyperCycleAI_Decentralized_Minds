@@ -7,14 +7,14 @@ WORKDIR /app
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
-# Install backend dependencies
+# Install frontend dependencies
 RUN npm install
 
 # Copy the current directory contents into the container at /app
 COPY . .
 
 # Specify the port the app runs on
-EXPOSE 3000
+EXPOSE 3001
 
 # Define the command to run the app
 CMD ["npm", "start"]

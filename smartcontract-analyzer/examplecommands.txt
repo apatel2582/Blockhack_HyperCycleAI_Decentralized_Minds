@@ -1,6 +1,8 @@
 Upload:
 Endpoint: /files/upload
-curl -X POST -F "file=@path_to_your_file.sol" http://localhost:3000/files/upload
+curl -X POST -F 
+
+create an /uploads folder inside backend folder
 
 Extract:
 Endpoint: /files/extract

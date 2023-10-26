@@ -4,14 +4,27 @@
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs"); // Add this line to import the fs module
+const path = require("path");
 const { extractAll } = require("../services/contractExtractor");
+const dotenv = require("dotenv");
+
+// At the top, load environment variables from the appropriate .env file
+if (process.env.NODE_ENV === "docker") {
+  dotenv.config({ path: ".env.docker" });
+} else {
+  dotenv.config({ path: ".env.local" });
+}
 
 const router = express.Router();
+// const UPLOAD_DIR = "uploads/"; // Use this for Docker
+// const UPLOAD_DIR = ""; // Use this for local development
+// Replace the hard-coded UPLOAD_DIR with the environment variable
+const UPLOAD_DIR = process.env.UPLOAD_PATH || "";
 
 // Setup multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/");
+    cb(null, UPLOAD_DIR);
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
@@ -65,10 +78,16 @@ router.post(
 // Endpoint for extracting contract details
 router.post("/extract", async (req, res, next) => {
   try {
-    const filePath = req.body.filePath;
-    if (!filePath) {
-      return res.status(400).send({ message: "Please provide a file path" });
+    let givenPath = req.body.filePath;
+
+    // If the path doesn't contain the uploads/ directory, then prefix it
+    if (!givenPath.includes(UPLOAD_DIR)) {
+      givenPath = path.join(UPLOAD_DIR, givenPath);
     }
+
+    const filePath = path.join(__dirname, "..", givenPath);
+
+    console.log("Constructed file path:", filePath);
 
     // Read file content from the disk
     const contractFileContent = fs.readFileSync(filePath, "utf-8");

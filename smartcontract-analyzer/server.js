@@ -20,6 +20,9 @@ app.use("/files", fileRoutes);
 app.use("/analysis", analysisRoutes);
 app.use("/summary", summaryRoutes);
 
+// Serve static files
+app.use("/uploads", express.static("uploads"));
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   if (res.headersSent) {
