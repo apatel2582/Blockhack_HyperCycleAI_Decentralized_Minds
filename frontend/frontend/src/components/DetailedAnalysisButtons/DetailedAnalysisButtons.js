@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./DetailedAnalysisButtons.css";
 
-const analysisEndpoints = [
-  { endpoint: "/analysis/solidity-version", label: "Solidity Version" },
-  { endpoint: "/analysis/contract-type", label: "Contract Type" },
-  { endpoint: "/analysis/contract-details", label: "Contract Details" },
+const analysisEndpointsRated = [
   { endpoint: "/analysis/function-details", label: "Function Details" },
   { endpoint: "/analysis/token-handling", label: "Token Handling" },
   { endpoint: "/analysis/interactions", label: "Interactions" },
   { endpoint: "/analysis/vulnerabilities", label: "Vulnerabilities" },
   { endpoint: "/analysis/gas-efficiency", label: "Gas Efficiency" },
+];
+const analysisEndpointsNotRated = [
+  { endpoint: "/analysis/solidity-version", label: "Solidity Version" },
+  { endpoint: "/analysis/contract-type", label: "Contract Type" },
+  { endpoint: "/analysis/contract-details", label: "Contract Details" },
   { endpoint: "/analysis/hardcoded-addresses", label: "Hardcoded Addresses" },
 ];
-
 function DetailedAnalysisButtons({
   contractDetails,
   onRequestAnalysis,
@@ -52,8 +53,28 @@ function DetailedAnalysisButtons({
   return (
     <div className="analysis-section">
       <h3 className="button-list">Detailed Analysis</h3>
+      <h4>To Be Rated</h4>
       <div className="analysis-section2">
-        {analysisEndpoints.map((analysis, index) => (
+        {analysisEndpointsRated.map((analysis, index) => (
+          <button
+            key={index}
+            className="btn btn-analysis"
+            onClick={() => fetchAnalysisEstimatedCost(analysis)}
+            disabled={
+              isLoading ||
+              (isEstimatingCost &&
+                currentSelectedAnalysis === analysis.endpoint)
+            }
+          >
+            {isEstimatingCost && currentSelectedAnalysis === analysis.endpoint
+              ? "Estimating Cost..."
+              : analysis.label}
+          </button>
+        ))}
+      </div>
+      <h4>Not To Be Rated</h4>
+      <div className="analysis-section2">
+        {analysisEndpointsNotRated.map((analysis, index) => (
           <button
             key={index}
             className="btn btn-analysis"
