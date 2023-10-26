@@ -35,7 +35,7 @@ Since Dockerization is currently facing issues, the recommendation is to run the
    - Navigate to the `smartcontract-analyzer` folder.
    - Run the command:
      ```bash
-     node server.js
+     npm start
      ```
    - The backend should start at `localhost:3000`.
 
@@ -45,11 +45,14 @@ Since Dockerization is currently facing issues, the recommendation is to run the
      ```bash
      npm start
      ```
-   - Since the backend occupies `localhost:3000`, the frontend should start at `localhost:3001`.
+   - backend - `localhost:3000`, the frontend - `localhost:3001`.
 
 ## **Docker Note**
 
-Although Docker files are provided, currently only the backend is accessible at `localhost:3000` when using Docker. The frontend faces issues. Thus, it's recommended not to use Docker for now.
+  - Make sure to have Docker Desktop installed and docker as a Environmental PATH variable.
+  - Docker Support arrived. `docker-compose up --build` From the main directory.
+  - Make sure to `docker-compose down -v` to stop and delete volumes and containers.
+  - Try to delete unused images to make space.
 
 ## **Environment Variables**
 
@@ -57,16 +60,19 @@ For the backend to function properly, you need to set up environment variables:
 
 1. **Without Docker**:
 
-   - Create a `.env` file in the `smartcontract-analyzer` folder with the following content:
+   - Create a `.env.local` file in the `smartcontract-analyzer` folder with the following content:
      ```env
      OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
      PORT=3000
+     UPLOAD_PATH=
      ```
 
 2. **With Docker** (not recommended at the moment):
-   - Create a `.env` file in the `smartcontract-analyzer` folder with just the API key:
+   - Create a `.env.docker` file in the `smartcontract-analyzer` folder with the following content:
      ```env
      OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+     PORT=3000
+     UPLOAD_PATH=uploads/
      ```
 
 ## **Contributors**
@@ -79,4 +85,4 @@ For the backend to function properly, you need to set up environment variables:
 
 ## **Acknowledgements**
 
-Made with ❤️ by the Decentralized Minds - GBC Blockchain Club.
+Made with ❤️ by the members of the Decentralized Minds - the GBC Blockchain Club.
