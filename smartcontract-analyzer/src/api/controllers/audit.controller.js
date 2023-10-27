@@ -5,8 +5,15 @@ const { handleResponse, handleError } = require("../utils/responseHelper");
 
 const handleAudit = async (req,res) => {
     try {
-        console.log(req.file);
-        const contractCode = req.file.buffer.toString("utf-8");
+        // console.log(req.file);
+        // console.log(req.contract)
+        console.log(req.body.contract)
+        // const contractCode = req.file.buffer.toString("utf-8");
+        const contractCode = req.body.contract;
+
+        if(!contractCode || contractCode.length == 0){
+            throw new TypeError("smart contract needed to be passed");
+        }
     
         if(req.headers["cost_only"]){
             const resp = handleCostEstimation(contractCode);
@@ -24,7 +31,7 @@ const handleAudit = async (req,res) => {
             throw new TypeError("Need user confirmation")
         } 
 
-        const resp = await handleAuditContract(req.file)
+        const resp = await handleAuditContract(contractCode)
 
         console.log("resp audit ", resp)
 

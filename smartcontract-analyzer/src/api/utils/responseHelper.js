@@ -5,6 +5,8 @@ const handleResponse = ({
     msg = 'Success',
     result = {}
 }) => {
+    const abc = {result, msg};
+    console.log(abc);
     res.status(statusCode).send({result, msg});
 };
 

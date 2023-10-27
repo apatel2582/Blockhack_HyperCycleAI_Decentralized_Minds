@@ -48,8 +48,8 @@ const handleCostEstimation = (contractCode) => {
         const promptContent = getPrompt("");
 
         // Calculate the estimated cost
-        const estimatedCostTokensFromFile = (contractCode.length / 100) * 0.1;
-        const estimatedCostTokensFromPrompt = (promptContent.length / 100) * 0.05;
+        const estimatedCostTokensFromFile = (contractCode.length / 1000) * 0.002;
+        const estimatedCostTokensFromPrompt = (promptContent.length / 1000) * 0.002;
         const totalEstimatedCostTokens =
             estimatedCostTokensFromFile + estimatedCostTokensFromPrompt;
 

@@ -1,3 +1,11 @@
 2023-10-26 14:04:58 error: handleAudit error : Auditing smart contract failed
 2023-10-26 14:05:29 error: handleAudit error : Auditing smart contract failed
 2023-10-26 14:07:28 error: handleAudit error : Auditing smart contract failed
+2023-10-27 15:52:44 error: handleAudit error : Cannot read properties of undefined (reading 'buffer')
+2023-10-27 15:54:03 error: handleAudit error : Cannot read properties of undefined (reading 'buffer')
+2023-10-27 15:54:55 error: handleAudit error : Cannot read properties of undefined (reading 'buffer')
+2023-10-27 15:55:18 error: handleAudit error : Cannot read properties of undefined (reading 'buffer')
+2023-10-27 16:44:54 error: handleAudit error : smart contract needed to be passed
+2023-10-27 16:45:45 error: handleAudit error : smart contract needed to be passed
+2023-10-27 16:51:31 error: AuditContract error : Unexpected token ' in JSON at position 6
+2023-10-27 16:51:31 error: handleAudit error : Auditing smart contract failed

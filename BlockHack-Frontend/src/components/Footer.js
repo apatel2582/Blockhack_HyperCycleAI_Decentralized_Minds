@@ -13,11 +13,11 @@ function Footer() {
       shadow="md"
     >
       <Icon as={AiOutlineTeam} mr={2} />© Decentralized Minds - GBC <br />
-      <p>
-        Anishkumar Patel <p> Umut Yorulmaz </p>
-        <p> Kevon Jaggassar</p> <p>Sufiyan Memon</p>
-        <p> Xiaogang Dong</p>
-      </p>
+        <p>Sufiyan Memon</p>
+        <p>Anishkumar Patel</p>
+        <p>Umut Yorulmaz </p>
+        <p>Kevon Jaggassar</p> 
+        <p>Xiaogang Dong</p>
     </Box>
   );
 }

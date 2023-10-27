@@ -9,14 +9,16 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
     const [analysis, setAnalysis] = useState(null);
+    const [file, setFile] = useState("");
+
     return (
         <ChakraProvider>
             <div className="App">
                 <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Main onUpload={setAnalysis} />} />
-                    <Route path="/analysis" element={<Analysis analysis={analysis} />} />
+                    <Route path="/" element={<Main onUpload={setAnalysis} fileHandle={setFile} file={file} />} />
+                    <Route path="/analysis" element={<Analysis analysis={analysis} file={file} />} />
                 </Routes>
                 <Footer />
                 </Router>
